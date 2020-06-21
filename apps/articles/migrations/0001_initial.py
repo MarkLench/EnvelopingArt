@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('DateAdded', models.DateField(default=datetime.date(2020, 6, 20))),
                 ('DateTimeAdded', models.DateTimeField(default=datetime.datetime(2020, 6, 20, 13, 29, 31, 969684, tzinfo=utc))),
                 ('Author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='articles_comment_author', to=settings.AUTH_USER_MODEL)),
-                ('Parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child_set', to='articles.comment')),
+                ('Parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child_set', to='user.comment')),
             ],
         ),
         migrations.CreateModel(
@@ -45,8 +45,8 @@ class Migration(migrations.Migration):
                 ('DateAdded', models.DateField(default=datetime.date(2020, 6, 20))),
                 ('DateTimeAdded', models.DateTimeField(default=datetime.datetime(2020, 6, 20, 13, 29, 31, 970684, tzinfo=utc))),
                 ('Author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('Comments', models.ManyToManyField(blank=True, null=True, to='articles.comment')),
-                ('Parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child_set', to='articles.article')),
+                ('Comments', models.ManyToManyField(blank=True, null=True, to='user.comment')),
+                ('Parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child_set', to='user.article')),
             ],
         ),
     ]
