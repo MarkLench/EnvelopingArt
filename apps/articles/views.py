@@ -4,13 +4,12 @@ from .models import article
 from django.views.generic import View
 from .utils import DetailMixin
 
-"""
-def allPostsPage(request):
-    return render(request, 'html/AllPostsPage.html')
+
+def all_articles(request):
+    return render(request, 'articles/all_articles_page.html')
 
 
 
 class articleDetailPage(DetailMixin, View):
     model = article
-    template = 'html/PostDetailPage.html'
-"""
+    template = 'articles/all_articles_page.html'

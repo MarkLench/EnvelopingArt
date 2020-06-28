@@ -1,4 +1,3 @@
-"""
 from Posts.models import Post
 from .serializers import PostSerializer
 
@@ -21,5 +20,3 @@ def PostViewDetail(request, slug):
     if request.method == "GET":
         serializer = PostSerializer(post)
         return Response(serializer.data)
-
-"""

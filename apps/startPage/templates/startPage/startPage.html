@@ -1,1 +1,34 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+{% block link %}<link href="{% static 'startPage/css/style.css' %}" rel="stylesheet" type='text/css'>{% endblock %}
+
+{% block content %}
+<div class="slider">
+  <img src="{% static 'startPage/css/Hi.jpg' %}" alt="">
+</div>
+
+
+<div class="recommended"><div class="back_btn"></div>
+  <div class="content_box"><img src="{% static 'startPage/unnamed.jpg' %}" alt=""></div>
+  <div class="content_box"><img src="{% static 'startPage/unnamed.jpg' %}" alt=""></div>
+  <div class="content_box"><img src="{% static 'startPage/unnamed.jpg' %}" alt=""></div>
+  <div class="content_box"><img src="{% static 'startPage/unnamed.jpg' %}" alt=""></div>
+  <div class="content_box"><img src="{% static 'startPage/unnamed.jpg' %}" alt=""></div>
+<div class="forward_btn"></div></div>
+<div class="popular">
+  <div class="art"><div class="back_btn"></div>
+    <div class="content_box"></div><div class="content_box"></div>
+    <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
+  <div class="forward_btn"></div></div>
+  <div class="photography"><div class="back_btn"></div>
+    <div class="content_box"></div><div class="content_box"></div>
+    <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
+  <div class="forward_btn"></div></div>
+  <div class="threeD"><div class="back_btn"></div>
+    <div class="content_box"></div><div class="content_box"></div>
+    <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
+  <div class="forward_btn"></div></div>
+  </div>
+{% endblock %}

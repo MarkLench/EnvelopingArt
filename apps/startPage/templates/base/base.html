@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="{% static 'startPage/css/style.css' %}" rel="stylesheet" type='text/css'>
+  <title>{% block title %}{% endblock %}</title>
+  <link href="{% static 'base/css/style.css' %}" rel="stylesheet" type='text/css'>
+  {% block link %}{% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 </head>
 <body>
   <div class='header'>
@@ -19,31 +21,22 @@
     </div>
   </div>
   <div class="main">
-    <div class="side_menu"></div>
+    <div class="side_menu">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Arts</li>
+          <li>Blog</li>
+          <li>Articles</li>
+          <li>FAG</li>
+        </ul>
+      </nav>
+    </div>
     <div class="content">
-      <div class="slider">
-
-      </div>
-      <div class="recommended"><div class="back_btn"></div>
-        <div class="content_box"></div><div class="content_box"></div>
-        <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
-      <div class="forward_btn"></div></div>
-      <div class="popular">
-        <div class="art"><div class="back_btn"></div>
-          <div class="content_box"></div><div class="content_box"></div>
-          <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
-        <div class="forward_btn"></div></div>
-        <div class="photography"><div class="back_btn"></div>
-          <div class="content_box"></div><div class="content_box"></div>
-          <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
-        <div class="forward_btn"></div></div>
-        <div class="threeD"><div class="back_btn"></div>
-          <div class="content_box"></div><div class="content_box"></div>
-          <div class="content_box"></div><div class="content_box"></div><div class="content_box"></div>
-        <div class="forward_btn"></div></div>
-        </div>
+      {% block content %}
 
 
+      {% endblock %}
       <div class="footer"></div>
     </div>
   </div>
