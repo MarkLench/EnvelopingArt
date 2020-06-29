@@ -12,11 +12,11 @@ def upload_location(instance, filename, **kwargs):
     )
     return file_path
 
-class comment(models.Model):
+class article_comment(models.Model):
     Author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles_comment_author')
     AdminComment = models.BooleanField(default=False)
     Body = models.CharField(max_length=512)
-    Parent = models.ForeignKey('self', blank=True, null=True, related_name='child_set', on_delete=models.CASCADE)
+    Parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
     Likes = models.PositiveIntegerField(default=0)
     Dislikes = models.PositiveIntegerField(default=0)
 
@@ -33,14 +33,14 @@ class article(models.Model):
     Body = models.TextField()
     Slug = models.SlugField(blank=True)
     Image = models.ImageField(upload_to=upload_location, null=True, blank=True)
-    Parent = models.ForeignKey('self', blank=True, null=True, related_name='child_set', on_delete=models.CASCADE)
+    Parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
     Likes = models.PositiveIntegerField(default=0)
     Dislikes = models.PositiveIntegerField(default=0)
 
     DateAdded = models.DateField(default=localdate())
     DateTimeAdded = models.DateTimeField(default=timezone.now())
 
-    Comments = models.ManyToManyField(comment, null=True, blank=True)
+    Comments = models.ManyToManyField(article_comment, null=True, blank=True)
 
     def __str__(self):
         return self.Title
