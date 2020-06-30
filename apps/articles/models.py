@@ -45,3 +45,6 @@ class article(models.Model):
     def __str__(self):
         return self.Title
 
+class article_favorite(models.Model):
+    Title = models.CharField(max_length=120, blank=True, null=True)
+    Favorite = models.ManyToManyField(article, null=True, blank=True)

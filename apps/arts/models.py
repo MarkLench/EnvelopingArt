@@ -12,7 +12,7 @@ def upload_location(instance, filename, **kwargs):
     )
     return file_path
 
-class comment(models.Model):
+class art_comment(models.Model):
     Author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='art_comment_author')
     AdminComment = models.BooleanField(default=False)
     Body = models.CharField(max_length=512)
@@ -38,9 +38,11 @@ class art(models.Model):
     DateAdded = models.DateField(default=localdate())
     DateTimeAdded = models.DateTimeField(default=timezone.now())
 
-    Comments = models.ManyToManyField(comment, null=True, blank=True)
+    Comments = models.ManyToManyField(art_comment, null=True, blank=True)
 
     def __str__(self):
         return self.Title
 
-
+class art_favorite(models.Model):
+    Title = models.CharField(max_length=120, blank=True, null=True)
+    Favorite = models.ManyToManyField(art, null=True, blank=True)
