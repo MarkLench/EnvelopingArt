@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from . import utils
 
-def start_page_view(request):
-    return render(request, 'startPage/startPage.html')
+class start_page_view(utils.page_view):
+    template = 'startPage/startPage.html'

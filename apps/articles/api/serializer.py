@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-from articles.models import article
+from apps.articles.models import article
 
-class PostSerializer(ModelSerializer):
+class article_serializer(ModelSerializer):
     class Meta:
         model = article
-#        fields = ['Title', 'Author', 'Thesis', 'Content', 'Image', 'DateAdded',
-#        'DateTimeAdded', 'Categories', 'Likes', 'Dislikes', 'Slug']
+#        fields = ['Title', 'Author', 'Thesis', 'Body', 'Image', 'DateAdded',
+#        'DateTimeAdded', 'Category', 'Likes', 'Dislikes', 'Slug']

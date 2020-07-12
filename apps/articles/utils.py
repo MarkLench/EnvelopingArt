@@ -1,8 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import *
+class get_objects:
+    model = None
+    template = None
 
-class DetailMixin:
+    def get(self, request):
+        Model = self.model
+        obj = Model.objects.order_by('-DateTimeAdded')
+        return render(request, self.template, context={Model.__name__.lower(): obj})
+
+class get_object:
     model = None
     template = None
 

@@ -23,8 +23,38 @@ a {
 .logo {
   margin: auto 23px;
 }
-.menu {
+.user_panel {
   margin: auto 23px;
+  width: 120px;
+  height: 35px;
+  background-color: #A0DCB3;
+}
+.user_panel div {
+  width: 39px;
+  height: 35px;
+  float: left;
+  border-right: 1px solid white;
+}
+.user_panel a {
+  font-size: 32px;
+  color: white;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+}
+.user_panel a:hover {
+  font-size: 42px;
+  color: #4B4C4B;
+}
+.user, .notifications, .log_out {
+  justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+..log_out {
+  border-right: none;
 }
 .search {
   margin: auto 23px;

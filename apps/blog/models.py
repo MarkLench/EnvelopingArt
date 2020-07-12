@@ -5,6 +5,8 @@ from django.utils.timezone import localdate
 
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+from transliterate import translit
+from django.urls import reverse
 
 def upload_location(instance, filename, **kwargs):
     file_path = 'Publications/{author_id}/{title}-{filename}'.format(
@@ -41,3 +43,11 @@ class post(models.Model):
 
     def __str__(self):
         return self.Title
+
+
+def pre_save_slug(sender, instance, *args, **kwargs):
+    if not instance.Slug:
+        slug = slugify(translit(str(instance.Title), 'ru', reversed=True))
+        instance.Slug = slug
+
+pre_save.connect(pre_save_slug, sender=(post))
