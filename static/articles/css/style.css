@@ -1,0 +1,9 @@
+.article_box {
+    display: flex;
+    display: -webkit-flex;
+     height: 260px;
+     border-top: 1px solid black;
+     border-bottom: 1px solid black;
+     width: 98%;
+     margin: 10px auto;
+}

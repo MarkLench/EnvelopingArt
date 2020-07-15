@@ -89,7 +89,7 @@ a {
 }
 
 .content{
-  min-width: 85%;
+  width: 85%;
   min-height: 1600px;
   right: 0;
   padding-top: 65px;
@@ -99,7 +99,8 @@ a {
 .footer {
   width: 100%;
   height: 256px;
-  background-color: #2f2f2f;
+  background-color: #f2f2f2;
+  display: block;
 }
 .forward_btn {
   height: 100%;
@@ -118,4 +119,38 @@ a {
   margin: auto;
   border-radius: 15px;
   overflow:hidden;
+}
+.content_container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+.close_content_container {
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  background-color: black;
+  z-index: 12;
+  top: 5px;
+  right: 5px;
+}
+.content_display {
+  height: 90%;
+  width: 960px;
+  background-color: white;
+  border-radius: 25px;
+
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+}
+@media screen and (max-width: 980px) {
+  .content_display {
+  width: 85%;}
 }

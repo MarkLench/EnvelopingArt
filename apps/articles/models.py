@@ -23,7 +23,7 @@ class article_comment(models.Model):
     Dislikes = models.PositiveIntegerField(default=0)
 
     DateAdded = models.DateField(default=localdate())
-    DateTimeAdded = models.DateTimeField(default=timezone.now())
+    DateTimeAdded = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.Body
@@ -49,7 +49,7 @@ class article(models.Model):
     Category = models.CharField(max_length=100, choices=Categories, null=True, blank=True)
 
     DateAdded = models.DateField(default=localdate())
-    DateTimeAdded = models.DateTimeField(default=timezone.now())
+    DateTimeAdded = models.DateTimeField(default=timezone.now)
 
     Comments = models.ManyToManyField(article_comment, null=True, blank=True)
 

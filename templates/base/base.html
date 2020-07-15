@@ -11,6 +11,7 @@
   {% block link %}{% endblock %}
 </head>
 <body>
+  {% block container %}{% endblock %}
   <div class='header'>
     <div class="header_content">
       <div class="user_panel">
@@ -42,10 +43,11 @@
 
 
       {% endblock %}
-      <div class="footer"></div>
-
     </div>
   </div>
+  <div class="footer"></div>
+
+
   <script src="{% static 'base/js/vue.min.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
   <script src="{% static 'base/js/script.js' %}"></script>
