@@ -1,4 +1,3 @@
-"""
 from . import views
 from django.urls import path
 
@@ -10,4 +9,3 @@ urlpatterns = [
 ]
 
 urlpatterns += router.urls
-"""

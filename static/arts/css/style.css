@@ -1,0 +1,26 @@
+.art_space {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: baseline;
+    width: 100%;
+    height: 100%;
+}
+.art_box {
+  height: 256px;
+  width: 256px;
+  background-color: blue;
+  border-radius: 15px;
+  margin: 20px;
+
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+}
+@media only screen and (max-width: 713px) {
+  .art_box {
+    height: 335px;
+    width: 335px;}
+}

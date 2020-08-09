@@ -1,6 +1,9 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %}Posts{% endblock %}
-{% block link %}{% endblock %}
+{% block link %}<link rel="stylesheet" href="{% static 'articles/css/style.css' %}">{% endblock %}
 {% block content %}
-
+{% for state in post %}
+        <div class="article_box">{{ state.Title }}</div>
+    {% endfor %}
 {% endblock %}

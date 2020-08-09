@@ -14,6 +14,7 @@
   {% block container %}{% endblock %}
   <div class='header'>
     <div class="header_content">
+      {% if user.is_authenticated %}
       <div class="user_panel">
         <div class="user">
           <a href="#"><i class="fas fa-user"></i></a>
@@ -25,6 +26,13 @@
           <a href="#"><i class="fas fa-sign-out-alt"></i></a>
         </div>
       </div>
+      {% else %}
+      <div class="anonymous_panel">
+        <a href="{% url 'login' %}"><h4>Log in</h4></a>
+        <a href="{% url 'register' %}"><h4>Register</h4></a>
+      </div>
+      {% endif %}
+      <div class="menu_btn"><div></div><div></div><div></div></div>
       <div class="search"></div>
       <div class="logo">logo</div>
     </div>

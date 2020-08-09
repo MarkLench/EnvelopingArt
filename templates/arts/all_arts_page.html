@@ -1,6 +1,13 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %}Arts{% endblock %}
-{% block link %}{% endblock %}
+{% block link %}<link rel="stylesheet" href="{% static 'arts/css/style.css' %}">{% endblock %}
 {% block content %}
-
+<div class="art_space">
+ <div class="art_box"></div>
+<div class="art_box"></div>
+<div class="art_box"></div>
+<div class="art_box"></div>
+<div class="art_box"></div>
+</div>
 {% endblock %}
