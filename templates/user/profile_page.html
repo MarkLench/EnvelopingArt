@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block link %}<link rel="stylesheet" href="{% static 'user/style.css' %}">{% endblock %}
+{% block content %}
+    <h3>{{ user.username }}</h3>
+    {{ user.Image }}
+    <p>{{ user.Level }}</p>
+    <p>{{ user.Information }}</p>
+    <p>{% for friend in user.Friends.all %}
+         {{ friend }}
+       {% empty %}
+            empty list!
+       {% endfor %}</p>
+{% endblock %}

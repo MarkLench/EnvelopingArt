@@ -210,3 +210,18 @@ a {
   .menu_btn div {
     display: block;}
 }
+
+
+
+
+.notification {
+    position: fixed;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    bottom: 20px;
+    left: 20px;
+}
+.notification p {
+    padding: 10px;
+    color: white;
+}

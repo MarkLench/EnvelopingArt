@@ -43,7 +43,13 @@
         <li><h3><a href="{% url 'start_page_view' %}">Home</a></h3></li>
         <li><h3><a href="{% url 'all_arts' %}">Arts</a></h3></li>
         <li><h3><a href="{% url 'all_posts' %}">Blogs</a></h3></li>
+        {% if user.is_authenticated %}
+        <li><h3><a href="{% url 'add_new_post' %}">Add blog</a></h3></li>
+        {% endif %}
         <li><h3><a href="{% url 'all_articles' %}">Articles</a></h3></li>
+        {% if user.is_authenticated %}
+        <li><h3><a href="{% url 'add_new_article' %}">Add article</a></h3></li>
+        {% endif %}
       </ul>
     </div>
     <div class="content">

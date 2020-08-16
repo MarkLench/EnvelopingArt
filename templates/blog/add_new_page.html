@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}New post{% endblock %}
+{% block link %}<link rel="stylesheet" href="{% static 'blog/style.css' %}">{% endblock %}
+{% block content %}
+<div class="Fields">
+        <form action="." method="post" id="AddForm">
+            {% csrf_token %}
+			<h1>Title</h1>
+			<h1>{{ form.Title }}</h1>
+			<p>Body: </p>
+			<p>{{ form.Body }}</p>
+        <input class="button" type="submit" value="Сохранить">
+        </form>
+    </div>
+{% endblock %}
