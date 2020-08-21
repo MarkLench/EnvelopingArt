@@ -1,16 +1,28 @@
-/*
+import vPopup from "./"
+
 var app = new Vue({
-  el: '#start_content',
+  el: '#article_box',
   data: {
-    comments: [],
-    likes: 0,
-    dislikes: 0
+    article: [],
+    isInfoArticle: false;
   },
+  components {
+    vPopup
+  },
+  /*
   created: function() {
     const self = this;
     axios.get('/publications/api/posts/')
     .then(function(response) {
-      self.comments = response.data
+      self.article = response.data
     })
+  }, */
+  methods: {
+    article_data: funtion(slug) {
+        this.isInfoArticle: true;
+    }
+    close_data : funtion() {
+
+    }
   },
 })
